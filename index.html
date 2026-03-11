@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelo de palavras</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/4dhf2XcR/favicon.png" type="image/png"> <!--Icone da aba -->
+    
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <!--CSS personalizado-->
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Duelo de palavras</h1>
+
+        <div class="login-div">
+            <h3>Jogador 1, entre para jogar:</h3>
+            <label>Nome do jogador 1:</label>
+            <input type="text" id="player1-name-input" class="form-control" placeholder="Nome do jogador 1">
+        </div>
+
+        <br>
+        
+        <div class="login-div">
+            <h3>Jogador 2, entre para jogar:</h3>
+            <label>Nome do jogador 2:</label>
+            <input type="text" id="player2-name-input" class="form-control" placeholder="Nome do jogador 2">
+        </div>
+
+        <br>
+
+        <button style="width: 30%;margin-top: 0; margin-bottom: 5%;" class="btn btn-primary" onclick="addUser()">Entrar</button>
+    </div>
+    <script src="game-login.js"></script>
+</body>
+</html>
