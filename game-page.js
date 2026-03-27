@@ -13,5 +13,45 @@ document.getElementById("playerAnswer").innerHTML = `Turno de resposta: ${player
 
 function send(){
     let getWord = document.getElementById("word").value;
-    let word = getWord.toLowerCase();        
+    let word = getWord.toLowerCase();
+    
+    let charAt1 = word.charAt(1);
+    let lengthDivide2 = Math.floor(word.length/2);
+    let charAt2 = word.charAt(lengthDivide2);
+    let lengthMinus1 = word.length - 1;
+    let charAt3 = word.charAt(lengthMinus1);
+    
+    let removeCharAt1 = word.replace(charAt1,"_");
+    let removeCharAt2 = removeCharAt1.replace(charAt2, "_");
+    let removeCharAt3 = removeCharAt2.replace(charAt3, "_");
+
+    //let questionWord = "<h4 id='word-display'> P. " + removeCharAt3 + "</h4>";
+    let questionWord = `<h4 id="word-display"> Descubra a palavra: ${removeCharAt3} </h4>`;
+    let inputBox = `<br> Resposta: <input type="text" id ="input-check-box">`;
+    //let checkButton = <br> <br> <button class='btn btn-info' onclick='check()'> Verificar </button>";
+    let checkButton = `<br> <br> <button class="btn btn-info" onclick="check()"> Verificar </button>`;
+    //let row = questionWord + inputBox + checkButton;
+    let row = `${questionWord} ${inputBox} ${checkButton}`;
+
+    document.getElementById("output").innerHTML = row;
+    document.getElementById("word").value = "";
+}
+
+let questionTurn = "player1";
+let answerTurn = "player2";
+
+function check(){
+    let getAnswer = document.getElementById("input-check-box").value;
+    let answer = getAnswer.toLowerCase();
+
+    if(answer == word){
+        if(answerTurn == "player1"){
+            player1Score += 1;
+            document.getElementById("player1-score").innerHTML = player1Score;
+        }
+        else{
+            player2Score += 1;
+            document.getElementById("player2-score").innerHTML = player2Score;
+        }
+    }
 }
