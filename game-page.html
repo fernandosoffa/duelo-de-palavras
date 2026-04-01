@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duelo de palavras</title>
-    <link rel="shortcut icon" href="https://i.postimg.cc/4dhf2XcR/favicon.png" type="image/png"> <!--Icone da aba -->
-    <link rel="shortcut icon" href="https://i.postimg.cc/4dhf2XcR/favicon.png" type="image/png"> <!--Icone da aba -->
+    <link rel="shortcut icon" href="https://i.postimg.cc/4dhf2XcR/favicon.png" type="image/png">
     
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -14,32 +13,50 @@
     
     <!--CSS personalizado-->
     <link rel="stylesheet" href="game.css">
-
 </head>
 <body>
-    <h4 id="player1-name"></h4> 
-    <span id="player1-score"></span>
-    
-    <br>
-    
-    <h4 id="player2-name"></h4> 
-    <span id="player2-score"></span>
-    
-    <br>
-    
     <div class="container">
-        <h2 style="color:   rgb(6, 124, 114);">Duelo de Palavras</h2>
-        <h3 id="player-question"></h3>
-        <h3 id="player-answer"></h3>
-        <div id="output" class="col-lg-6"></div>
-        <br><br>
+        <!-- Placar dos jogadores -->
+        <div class="score-board">
+            <div class="player-card" id="player1-card">
+                <h4 id="player1-name"></h4>
+                <span class="player-score" id="player1-score">0</span>
+            </div>
+            
+            <div class="player-card" id="player2-card">
+                <h4 id="player2-name"></h4>
+                <span class="player-score" id="player2-score">0</span>
+            </div>
+        </div>
+        
+        <!-- Título do jogo -->
+        <h2>Duelo de Palavras</h2>
+        
+        <!-- Indicadores de turno -->
+        <div class="turn-indicator question">
+            <span id="player-question"></span>
+        </div>
+        
+        <div class="turn-indicator answer">
+            <span id="player-answer"></span>
+        </div>
+        
+        <!-- Área de saída (palavra embaralhada/resposta) -->
+        <div id="output" class="col-lg-12"></div>
+        
+        <!-- Formulário de entrada -->
         <div class="login-div">
-            <label>Sua palavra: <strong style="color: red;">Use uma palavra com 5 ou mais letras</strong></label>
-            <input type="text" id="word" class="form-control" placeholder="Insira sua palavra aqui:">
-            <br>
-            <button class="btn btn-success" onclick="send()">Enviar</button>
+            <label>
+                Sua palavra: 
+                <strong>Use uma palavra com 5 ou mais letras</strong>
+            </label>
+            <input type="text" id="word" class="form-control" placeholder="Insira sua palavra aqui...">
+            <button class="btn btn-success" onclick="send()">
+                Enviar
+            </button>
         </div>
     </div>
+    
     <script src="game-page.js"></script>
 </body>
 </html>
