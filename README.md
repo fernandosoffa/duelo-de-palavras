@@ -28,6 +28,7 @@ Projeto educacional para aprendizado.
 
 ```bash
 git clone https://github.com/fernando.soffa/duelo-de-palavras
+```
 
 2. Abra o arquivo `index.html` em seu navegador.
 
